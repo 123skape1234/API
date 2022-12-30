@@ -1,0 +1,72 @@
+{
+  "definitions": {},
+  "info": { "title": "Cool product name", "version": "0.0.0" },
+  "paths": {
+    "/api/decrypt": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "in": "GET(urlargs) or POST(body)",
+            "name": "data",
+            "required": true,
+            "type": "hex string"
+          }
+        ],
+        "produces": ["plaintext string"],
+        "responses": {},
+        "summary": "Decrypt our data with secret internal key"
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "in": "GET(urlargs) or POST(body)",
+            "name": "data",
+            "required": true,
+            "type": "hex string"
+          }
+        ],
+        "produces": ["plaintext string"],
+        "responses": {},
+        "summary": "Decrypt our data with secret internal key"
+      }
+    },
+    "/api/encrypt": {
+      "post": {
+        "description": "",
+        "parameters": [
+          { "in": "body", "name": "data", "required": true, "type": "string" }
+        ],
+        "produces": ["hex string"],
+        "responses": {},
+        "summary": "Encrypts data with secret internal key"
+      }
+    },
+    "/api/user/{user}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "<username>",
+            "required": true,
+            "type": "path"
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {},
+        "summary": "Get information from the database on a user. example: /api/user/bob"
+      }
+    },
+    "/api/users": {
+      "get": {
+        "description": "",
+        "produces": ["application/json"],
+        "responses": {},
+        "summary": "List all users from database."
+      }
+    }
+  },
+  "swagger": "2.0"
+}
